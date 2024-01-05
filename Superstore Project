@@ -1,4 +1,4 @@
-#project on taking data from a supermarket and analyzing stock, price / expected revenue
+#project on taking data from a department store and analyzing stock, price / expected revenue
 
 #data used to create tables
 CREATE TABLE superstore (
