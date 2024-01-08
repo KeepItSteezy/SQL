@@ -1,0 +1,47 @@
+#Project created from scratch, including tables, info in data taken from google, as of 1/8/2024
+
+#Dataset
+
+CREATE TABLE musical_artist (
+    artist_id integer,
+    name text,
+    age integer,
+    state text
+);
+    
+INSERT INTO musical_artist (artist_id, name, age, state)
+VALUES 
+    (1, "Taylor Swift", 34, "PA"),
+    (2, "Eminem", 51, "MI"),
+    (3, "Skrillex", 35, "CA"),
+    (4, "George Strait", 71, "TX");  
+    
+CREATE TABLE songs (
+    artist_id integer,
+    song_id integer,
+    songname text,
+    plays integer,
+    genre text
+);
+    
+INSERT INTO songs (artist_id, song_id, songname, plays, genre)
+VALUES 
+   (1, 1, "Cruel Summer", 1570910010, "pop"),
+   (2, 2, "Without Me", 1913596507, "rap"),
+   (3, 3, "Where Are U Now", 1067968812, "edm"),
+   (4, 4, "Check Yes Or No", 229173598, "country");
+
+
+#Analysis
+
+#What are the top artists, their ages, and home state, sorted by age?
+SELECT name, age, state
+FROM musical_artist
+ORDER BY age;
+
+#Who's songs are the most popular and which genres are the songs in?
+SELECT m.name, s.songname, s.genre
+FROM musical_artist m
+JOIN songs s
+ON m.artist_id = s.artist_id
+ORDER BY s.plays DESC;
