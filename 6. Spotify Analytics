@@ -47,3 +47,17 @@ FROM BIT_DB.Spotifydata
 GROUP BY artist_name
 ORDER BY popularity DESC
 LIMIT 10;
+
+# How does danceability influence popularity?
+SELECT danceability, AVG(popularity), COUNT(*) AS song_count
+FROM BIT_DB.Spotifydata
+GROUP BY danceability
+ORDER BY danceability;
+# Results are inconclusive, visualisation would help as well as further analysis with other variables
+
+# What about key and mode (value 1 being major vs minor), does this impact popularity?
+SELECT song_key, song_mode, AVG(popularity), COUNT(*) AS song_count
+FROM BIT_DB.Spotifydata
+GROUP BY song_key, song_mode
+ORDER BY AVG(popularity) DESC;
+# Results are not significant, visualisation would help as well as further analysis with other variables
