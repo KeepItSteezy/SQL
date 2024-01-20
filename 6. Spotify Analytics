@@ -1,4 +1,4 @@
-# Created a table, then imported the data from Kaggle, spotify 2021 top 50 data
+# Created a table in SQLiteStudio, then imported the data from Kaggle, spotify 2021 top 50 data
 # link: https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021
 # Then I performed analytics on the dataset in SQLiteStudio
 
