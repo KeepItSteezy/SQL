@@ -1,3 +1,8 @@
+# Analyses of 14 prompts using a sales sample database called Chinook containing 11 tables using SQLiteStudio
+# tables include albums, artists, customers, employees, genres, invoice items, invoices, media types, playlists, playlist tracks, and tracks
+
+
+
 # Show Customers (their full names, customer ID, and country) who are not in the US
 SELECT firstname, lastname, customerId, country
 FROM chinook.customers
@@ -67,3 +72,34 @@ JOIN chinook.artists art
 ON alb.artistId = art.artistId;
 
 # Provide a query that shows all the Tracks, and include the Album name, Media type, and Genre
+SELECT tr.name AS Track, alb.title AS Album, med.name AS MediaType, gen.name AS Genre
+FROM chinook.tracks tr
+JOIN chinook.albums alb
+ON tr.albumId = alb.albumId
+JOIN chinook.media_types med
+ON tr.mediaTypeId = med.mediaTypeId
+JOIN chinook.genres gen
+ON tr.genreId = gen.genreId;
+
+# Show the total sales made by each sales agent
+SELECT emp.FirstName, emp.LastName, ROUND(SUM(inv.Total), 2) AS TotalSales
+FROM chinook.invoices inv
+JOIN chinook.customers cust
+ON inv.customerId = cust.customerId
+JOIN chinook.employees emp
+ON cust.supportRepId = emp.employeeId
+WHERE emp.title = "Sales Support Agent"
+GROUP BY emp.firstName;
+
+# Which sales agent made the most dollars in sales in 2009?
+SELECT emp.FirstName, emp.LastName, ROUND(SUM(inv.Total), 2) AS TotalSales
+FROM chinook.invoices inv
+JOIN chinook.customers cust
+ON inv.customerId = cust.customerId
+JOIN chinook.employees emp
+ON cust.supportRepId = emp.employeeId
+WHERE emp.title = "Sales Support Agent"
+GROUP BY emp.FirstName
+ORDER BY inv.total DESC
+LIMIT 1;
+
