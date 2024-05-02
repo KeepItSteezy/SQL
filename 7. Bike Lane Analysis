@@ -1,6 +1,8 @@
 # Created a table in SQLite Studio and then added the dataset below
-# Analyzed the data using a CTE and window function OVER, PARTITION BY
-# Used the windown fuction to interpret multiple rows of data for the same street in order to recommend if the lanes on each street should be removed, improved, or left as is
+
+# This project and dataset uses data about different bike lanes and their safety ratings in order to identify unsafe lanes and determine which ones need to be removed or improved
+
+# Analyzed the data using a CTE and a window function OVER, PARTITION BY to recommend and label the lanes on each street as safe and by which should be removed, improved, or left as is
 
 
 CREATE TABLE BIT_DB.CityBikeLanes (
