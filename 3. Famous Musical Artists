@@ -1,7 +1,11 @@
-#Project created from scratch, including tables, info in data taken from google, as of 1/8/2024
-#This project to create tables from scratch and to combine them using JOIN
+# Project created from scratch, including tables, info in data taken from google, as of 1/8/2024
+# This project to create tables from scratch and to combine them using JOIN
 
-#Dataset
+# Looked at 4 famous artists, their genres, hometowns, ages, and total listens of their top songs
+
+# Results: Found Eminem had the most plays with his song "Without You", followed by Taylor Swift's trending "Cruel Summer". Top genre was rap because of this
+
+# Dataset
 
 CREATE TABLE musical_artist (
     artist_id integer,
@@ -33,14 +37,14 @@ VALUES
    (4, 4, "Check Yes Or No", 229173598, "country");
 
 
-#Analysis
+# Analysis
 
-#What are the top artists, their ages, and home state, sorted by age?
+# What are the top artists, their ages, and home state, sorted by age?
 SELECT name, age, state
 FROM musical_artist
 ORDER BY age;
 
-#Who's songs are the most popular and which genres are the songs in?
+# Who's songs are the most popular and which genres are the songs in?
 SELECT m.name, s.songname, s.genre
 FROM musical_artist m
 JOIN songs s
