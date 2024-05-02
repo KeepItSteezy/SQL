@@ -16,10 +16,10 @@ CREATE TABLE musical_artist (
     
 INSERT INTO musical_artist (artist_id, name, age, state)
 VALUES 
-    (1, "Taylor Swift", 34, "PA"),
-    (2, "Eminem", 51, "MI"),
-    (3, "Skrillex", 35, "CA"),
-    (4, "George Strait", 71, "TX");  
+    (1, 'Taylor Swift', 34, 'PA'),
+    (2, 'Eminem', 51, 'MI'),
+    (3, 'Skrillex', 35, 'CA'),
+    (4, 'George Strait', 71, 'TX');  
     
 CREATE TABLE songs (
     artist_id integer,
@@ -31,10 +31,10 @@ CREATE TABLE songs (
     
 INSERT INTO songs (artist_id, song_id, songname, plays, genre)
 VALUES 
-   (1, 1, "Cruel Summer", 1570910010, "pop"),
-   (2, 2, "Without Me", 1913596507, "rap"),
-   (3, 3, "Where Are U Now", 1067968812, "edm"),
-   (4, 4, "Check Yes Or No", 229173598, "country");
+   (1, 1, 'Cruel Summer', 1570910010, 'pop'),
+   (2, 2, 'Without Me', 1913596507, 'rap'),
+   (3, 3, 'Where Are U Now', 1067968812, 'edm'),
+   (4, 4, 'Check Yes Or No', 229173598, 'country');
 
 
 # Analysis
