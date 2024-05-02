@@ -1,4 +1,10 @@
-# Querying a database with multiple tables in it to quantify statistics about customer and order data in SQLite Studio
+# Querying a database with multiple tables in it to quantify statistics about customer and order data
+# Queries executed using SQLite Studio
+
+# Analyzed sales data from January and February to determine total sales in each month, account numbers for customers, total revenue of each product, total spending from higher volume customers, average quantity purchased with each transaction, etc. 
+
+# Results: Cheapest item sold was a 4 pack of AAA batteries, 278 customers ordered more than 2 things in February, average spend per account was $190.00, Apple headphones were ordered more than Bose headphones, and in January Macbook Pros brought in the most revenue at $399,500.00
+
 
 # Search the data set, filter out any invalid order numbers
 SELECT * 
