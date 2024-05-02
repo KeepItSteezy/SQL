@@ -3,6 +3,9 @@
 # The project was written using the PostgreSQL dialect and utilized data from the following two Netflix datasets stored at https://www.db-fiddle.com/f/pfsdrKi9cgCDp4Wwb77AF/0
 # https://www.db-fiddle.com/f/pfsdrKi9cgCDp4Wwb77AF/2 (with analysis)
 
+# Analyzed the amount of movies in the database, sorted them, saw how recently new ones were added, and looked at the age of movies, who the directors are, and their ratings
+
+
 CREATE TABLE netflix_titles_info
     ("show_id" varchar(5), "type" varchar(7), "title" varchar(58), "country" varchar(74), "date_added" timestamp, "release_year" int, "rating" varchar(5), "duration" varchar(9), "listed_in" varchar(74))
 ;
@@ -64,40 +67,40 @@ VALUES
     
 # The following SQL was written to answer specific questions about the content on Netflix:
 
-#Viewing data to see what we're working with
+# Viewing data to see what we're working with
 SELECT *
 FROM "netflix_titles_info"
 INNER JOIN "netflix_people"
 ON netflix_titles_info.show_id = netflix_people.show_id;
 
-#Show information important to show first to a viewer, such as title, type, age rating, director
+# Show information important to show first to a viewer, such as title, type, age rating, director
 SELECT t.title, t.type, t.rating, p.director
 FROM "netflix_titles_info" t
 INNER JOIN "netflix_people" p
 ON t.show_id = p.show_id;
 
-#How many movie titles are in the database?
+# How many movie titles are in the database?
 SELECT COUNT(*)
 FROM "netflix_titles_info"
 WHERE type = 'Movie';
 
-#When was the most recent batch of tv shows and/or movies added to the database?
+# When was the most recent batch of tv shows and/or movies added to the database?
 SELECT MAX(date(date_added))
 FROM "netflix_titles_info";
 
-#List all the movies and tv shows in alphabetical order
+# List all the movies and tv shows in alphabetical order
 SELECT title
 FROM "netflix_titles_info"
 ORDER BY title;
 
-#Who was the Director for the movie The Starling?
+# Who was the Director for the movie The Starling?
 SELECT p.director
 FROM "netflix_people" p
 JOIN "netflix_titles_info" t
 ON t.show_id = p.show_id
 WHERE t.title = 'The Starling';
 
-#What is the oldest movie in the database and what year was it made?
+# What is the oldest movie in the database and what year was it made?
 SELECT title, release_year
 FROM "netflix_titles_info"
 WHERE type='Movie'
