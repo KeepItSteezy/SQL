@@ -3,7 +3,8 @@
 
 # Analyzed most popular artists and what factors may determine popularity
 
-# Results: Olivia Rodrigo and Doja Cat had the most songs in the top 50 with 4 songs each. Ed Sheeran and Glass Animals were the most popular artists with a rating of 95 and 94 respectively. I did not find a strong correlation between danceability and popularity. I also did not find whether the song was in a major or minor key to have an influence on whether it was popular or not. 
+# Results: Olivia Rodrigo and Doja Cat had the most songs in the top 50 with 4 songs each. Ed Sheeran and Glass Animals were the most popular artists with a rating of 95 and 94 respectively. 
+    # I did not find a strong correlation between danceability and popularity. I also did not find whether the song was in a major or minor key to have an influence on whether it was popular or not. 
 
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
