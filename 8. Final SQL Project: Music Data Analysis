@@ -1,6 +1,7 @@
 # Analyses of 14 prompts using a sales sample database called Chinook containing 11 tables using SQLiteStudio
-# tables include albums, artists, customers, employees, genres, invoice items, invoices, media types, playlists, playlist tracks, and tracks
+# Tables include albums, artists, customers, employees, genres, invoice items, invoices, media types, playlists, playlist tracks, and tracks
 
+# Purpose of this project is to join 4+ tables containing sales data and product information for use to determine sales metrics and identify the top sales people at the company
 
 
 # Show Customers (their full names, customer ID, and country) who are not in the US
