@@ -1,4 +1,9 @@
-#This analysis utilized the following Fortune 500 dataset:
+# This analysis utilized the following Fortune 500 dataset
+
+# Analyzed which industries have the most revenue, the most employers, overall size of the companies, and which companies are especially generous with PTO, maternity leave, and with employees who stay for longer
+# Table created and code executed using https://www.db-fiddle.com/f/saxdDCCyos6z6UdpjeEXSJ/0
+
+# Results: Found in this dataset that tech and manufacturing companies make the most revenue. Average PTO given is 18 days. Found companies providing more than 18 days PTO, more than 12 weeks of maternity leave, and with average tenure of 5 years. 
 
 CREATE TABLE fortune_companies (
     company_id INTEGER PRIMARY KEY,
@@ -57,6 +62,7 @@ VALUES
     ('Company II', 'Telecommunications', 110.5, 2000, 1, 21, 12, 4.9),
     ('Company JJ', 'Manufacturing', 370.0, 3100, 1, 20, 12, 7.6),
     ('Company KK', 'Healthcare', 150.2, 3400, 0, 16, 8, 5.3);
+
 
 # Analysis: 
 
