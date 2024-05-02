@@ -1,6 +1,8 @@
-#project on taking data from a department store and analyzing stock, price / expected revenue
+# Project on taking data from a department store and analyzing stock, price, expected revenue
+# Created table and executed code on https://www.db-fiddle.com/f/PvBAaQwEUSWAxZCsg4Vmx/0
 
-#data used to create tables
+# Data used to create tables
+
 CREATE TABLE superstore (
     item_id INTEGER PRIMARY KEY,
     item_name TEXT,
@@ -29,32 +31,32 @@ VALUES
     (15, 'Cozy Throw Blanket', 'Furnishings', 24.99, 100, 4.2);
 
 
-#SQL code used to analyze the data
+# SQL used to analyze the data
 
-#1. Using a select statement to view data and sort by price
+# 1. Using a select statement to view data and sort by price
 SELECT * 
 FROM superstore
 ORDER BY price;
 
-#2. Find statistics about the prices such as SUM and AVG
+# 2. Find statistics about the prices such as SUM and AVG
 SELECT SUM(price), AVG(price)
 FROM superstore;
 
-#3. Provide pricing and stock information for the kitchen supplies category
+# 3. Provide pricing and stock information for the kitchen supplies category
 SELECT category, SUM(price), AVG(price), SUM(stock_quantity)
 FROM superstore
 WHERE category = "Kitchen Supplies";
 
-#4. How many air purifiers are in stock and how much do they cost?
+# 4. How many air purifiers are in stock and how much do they cost?
 SELECT item_name, price, stock_quantity
 FROM superstore
 WHERE item_name = "Air Purifier";
 
-#5. What is our forecasted revenue per part?
+# 5. What is our forecasted revenue per part?
 SELECT item_name AS Item, (price * stock_quantity) AS "Forecasted Revenue"
 FROM superstore
 ORDER BY price DESC;
 
-#6. What is our total expected revenue if we sell everything in stock at our current pricing?
+# 6. What is our total expected revenue if we sell everything in stock at our current pricing?
 SELECT SUM(price * stock_quantity) AS "Total Forecasted Revenue"
 FROM superstore;
