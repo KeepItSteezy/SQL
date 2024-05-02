@@ -1,6 +1,9 @@
-# Created a table in SQLiteStudio, then imported the data from Kaggle, spotify 2021 top 50 data
-# link: https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021
-# Then I performed analytics on the dataset in SQLiteStudio
+# Created a table and performed analysis in SQLiteStudio, then imported the data from Kaggle, spotify 2021 top 50 data
+# Link to Kaggle Dataset: https://www.kaggle.com/datasets/equinxx/spotify-top-50-songs-in-2021
+
+# Analyzed most popular artists and what factors may determine popularity
+
+# Results: Olivia Rodrigo and Doja Cat had the most songs in the top 50 with 4 songs each. Ed Sheeran and Glass Animals were the most popular artists with a rating of 95 and 94 respectively. I did not find a strong correlation between danceability and popularity. I also did not find whether the song was in a major or minor key to have an influence on whether it was popular or not. 
 
 CREATE TABLE BIT_DB.Spotifydata (
 id integer PRIMARY KEY,
